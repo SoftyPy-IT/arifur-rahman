@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "image": "/Images/mr-2.jpg",
+    "title": "Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 2,
+    "image": "/Images/mr-10.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 3,
+    "image": "/Images/mr-14.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 4,
+    "image": "/Images/mr-15.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 5,
+    "image": "/Images/mr-5.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 6,
+    "image": "/Images/mr-6.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 7,
+    "image": "/Images/mr-12.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 8,
+    "image": "/Images/mr-11.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 9,
+    "image": "/Images/mr-13.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 10,
+    "image": "/Images/mr-2.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 11,
+    "image": "/Images/mr-10.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  },
+  {
+    "id": 12,
+    "image": "/Images/mr-14.jpg",
+    "title": "Mojumder Arifur Rahman",
+    "width": "300px",
+    "height": "150px",
+    "hoverEffect": "scale-[105%]",
+    "description": "Card description or additional details."
+  }
+]

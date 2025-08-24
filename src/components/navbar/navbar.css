@@ -1,0 +1,119 @@
+
+
+
+
+
+/*Navlink Button Styling */
+.hover-button {
+  position: relative;
+  padding: 5px 20px;
+  font-size: 16px;
+  color: gray;
+  border: none;
+  cursor: pointer;
+  overflow: hidden; 
+  font-family: Arial, sans-serif;
+}
+
+
+.hover-button .border {
+  position: absolute;
+  background-color: blue;
+  width: 0;
+  height: 2px; 
+  transition: all 0.7s ease;
+}
+
+
+.hover-button .top-left {
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+}
+
+.hover-button .top-right {
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+}
+
+.hover-button .bottom-right {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom right;
+}
+
+.hover-button .bottom-left {
+  bottom: 0;
+  left: 0;
+  transform-origin: bottom left;
+}
+
+/* Hover Effect */
+.hover-button:hover .top-left {
+  width: 100%; 
+  animation: topLeftAnimation 0.7s forwards; /* Animate */
+}
+
+.hover-button:hover .top-right {
+  height: 100%;
+  animation: topRightAnimation 0.7s forwards;
+}
+
+.hover-button:hover .bottom-right {
+  width: 100%; 
+  animation: bottomRightAnimation 0.7s forwards;
+}
+
+.hover-button:hover .bottom-left {
+  height: 100%;
+  animation: bottomLeftAnimation 0.7s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes topLeftAnimation {
+  0% {
+    width: 0%;
+    height: 2px;
+  }
+  100% {
+    width: 100%;
+    height: 2px;
+  }
+}
+
+@keyframes topRightAnimation {
+  0% {
+    width: 2px;
+    height: 0%;
+  }
+  100% {
+    width: 2px;
+    height: 100%;
+  }
+}
+
+@keyframes bottomRightAnimation {
+  0% {
+    width: 0%;
+    height: 2px;
+  }
+  100% {
+    width: 100%;
+    height: 2px;
+  }
+}
+
+@keyframes bottomLeftAnimation {
+  0% {
+    width: 2px;
+    height: 0%;
+  }
+  100% {
+    width: 2px;
+    height: 100%;
+  }
+}
+
+
+

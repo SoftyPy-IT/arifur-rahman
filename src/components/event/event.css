@@ -1,0 +1,30 @@
+/* Common button for all components styling */
+.hover-border-button-event {
+  padding: 10px 40px;
+  font-size: 16px;
+  background-color: orangered;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-border-button-event::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px solid white; 
+  transform: scaleX(0);
+  transition: transform 0.4s ease; 
+  transform-origin: right;
+}
+
+.hover-border-button-event:hover::before {
+  transform: scaleX(1); 
+  transform-origin: left;
+}
