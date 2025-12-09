@@ -13,7 +13,7 @@ const ElectionCampaign = ({
   electionCampaign: TElectionCampaign;
 }) => {
   return (
-    // Election Campaign
+
     <div>
       <div
         style={{ backgroundImage: `url(${electionCampaign?.bgImageUrl})` }}
