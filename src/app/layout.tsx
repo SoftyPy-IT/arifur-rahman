@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -16,32 +15,33 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  // metadataBase: new URL("https://saifalikhan.info"),
   applicationName: "Arifur Rahman",
-  title: "Mojumder Arifur Rahman",
-  description:
-    "Politician of Bangladesh Nationalist Party and a former member of parliament for Jamalpur-1.",
+  title: "Arifur Rahman",
+  description: "Politician of Bangladesh Nationalist Party",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://mrmillat.com",
-    siteName: "Mojumder Arifur Rahman",
-    title: "Politician of Bangladesh Nationalist Party.",
-    description:
-      "মজুমদার আরিফুর রহমান ফেনী ফুলগাজীর একজন সুপরিচিত রাজনৈতিক নেতা এবং বিশিষ্ট শিল্পপতী। ",
+    // url: "https://saifalikhan.info",
+    siteName: "Arifur Rahman",
+    title: "Politician of Bangladesh Nationalist Party",
+    description: "একজন সুপরিচিত রাজনৈতিক নেতা",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Mojumder Arifur Rahman",
+        alt: "Arifur Rahman",
       },
     ],
-    countryName: "Bangladesh",
-    emails: ["info@shouravgroup-bd.com"],
-    phoneNumbers: ["+88 02 222260615"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arifur Rahman",
+    description: "Politician of Bangladesh Nationalist Party",
+    images: ["/logo.png"],
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -50,7 +50,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -59,6 +58,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-

@@ -2,17 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 /* Common button for all components styling */
 .hover-border-button {
   padding: 10px 40px;
   font-size: 16px;
-  background-color: blue;
+  background-color: #0c5adb;
   font-weight: bold;
   color: white;
-  border: none;
+  /* border: 2px solid blue; */
+  border-radius: 9px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -25,20 +23,17 @@
   left: 0;
   height: 100%;
   width: 100%;
-  border: 2px solid white; 
+  border: 2px solid white;
   transform: scaleX(0);
-  transition: transform 0.4s ease; 
+  transition: transform 0.4s ease;
   transform-origin: right;
 }
 
 .hover-border-button:hover::before {
-  transform: scaleX(1); 
   transform-origin: left;
+  background-color: blue;
+  color: white;
 }
-
-
-
-
 
 /* image gallery styles  */
 

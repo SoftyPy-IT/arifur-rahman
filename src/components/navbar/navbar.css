@@ -1,29 +1,21 @@
-
-
-
-
-
 /*Navlink Button Styling */
 .hover-button {
   position: relative;
   padding: 5px 20px;
   font-size: 16px;
-  color: gray;
-  border: none;
+  color: white;
   cursor: pointer;
-  overflow: hidden; 
+  overflow: hidden;
   font-family: Arial, sans-serif;
 }
-
 
 .hover-button .border {
   position: absolute;
   background-color: blue;
   width: 0;
-  height: 2px; 
+  height: 2px;
   transition: all 0.7s ease;
 }
-
 
 .hover-button .top-left {
   top: 0;
@@ -50,25 +42,6 @@
 }
 
 /* Hover Effect */
-.hover-button:hover .top-left {
-  width: 100%; 
-  animation: topLeftAnimation 0.7s forwards; /* Animate */
-}
-
-.hover-button:hover .top-right {
-  height: 100%;
-  animation: topRightAnimation 0.7s forwards;
-}
-
-.hover-button:hover .bottom-right {
-  width: 100%; 
-  animation: bottomRightAnimation 0.7s forwards;
-}
-
-.hover-button:hover .bottom-left {
-  height: 100%;
-  animation: bottomLeftAnimation 0.7s forwards;
-}
 
 /* Keyframe Animations */
 @keyframes topLeftAnimation {
@@ -114,6 +87,3 @@
     height: 100%;
   }
 }
-
-
-

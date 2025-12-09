@@ -1,11 +1,11 @@
 {
-  "name": "arifur-rahman-porfolio-2025",
+  "name": "arifur-rahman-portfolio-2025",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 5011",
+    "start": "next start -p 9001",
     "lint": "next lint"
   },
   "dependencies": {

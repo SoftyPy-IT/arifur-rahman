@@ -5,13 +5,13 @@ import React from 'react';
 const page = () => {
   return (
     <>
-      <Head>
-        <title>Mojumder Arifur Rahman</title>
-        <meta name="description" content="Official website of Mojumder Arifur Rahman, Businessmen." />
+    <Head>
+        <title>Arifur Rahman</title>
+        <meta name="description" content="Official website of Arifur Rahman" />
       </Head>
-      <main>
-        <HomePage />
-      </main>
+       <main>
+       <HomePage/>
+       </main> 
     </>
   );
 };

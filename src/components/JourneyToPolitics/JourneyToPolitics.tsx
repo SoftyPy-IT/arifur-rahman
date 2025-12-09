@@ -34,7 +34,7 @@ const JourneyToPolitics = () => {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-blue-950">Journey to Politics</h2>
         <p className="text-gray-600 mt-4">
-          A timeline of significant milestones in the life of <span className="font-semibold text-orange-500">Mojumder Arifur Rahman</span>.
+          A timeline of significant milestones in the life of <span className="font-semibold text-orange-500">Arifur Rahman</span>.
         </p>
       </div>
 

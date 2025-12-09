@@ -85,8 +85,8 @@ export type TVoiceOnMedia = {
 export type TBanner = {
   name: string;
   designation: string;
-  videoUrl: string;
-  imgUrl: string;
+  partyname: string;
+  image: string;
   updatedAt: string;
 };
 
@@ -110,7 +110,7 @@ export type TWhoWeAre = {
   _id: string;
   title: string;
   description: string;
-  videoUrl: string;
+  videourl: string;
   updatedAt: string;
 };
 

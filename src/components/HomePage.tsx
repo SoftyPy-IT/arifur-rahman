@@ -1,21 +1,22 @@
-"use client"
-import ArticleSectionHomePage from '@/components/Article/ArticleSectionHomePage';
-import Banner from '@/components/Banner/Banner';
-import ElectionCampaign from '@/components/electionCampaign/ElectionCampaign';
-import EventSliderHomePage from '@/components/event/EventSliderHomePage';
-import IntroductionVideo from '@/components/introductionVideo/IntroductionVideo';
-import OurConcern from '@/components/OurConcern';
-import VoiceOnMedia from '@/components/VoiceOnMedia';
-import { TFeatures } from '@/types/types';
-import React, { useEffect, useState } from 'react';
-
+"use client";
+import ArticleSectionHomePage from "@/components/Article/ArticleSectionHomePage";
+import Banner from "@/components/Banner/Banner";
+import ElectionCampaign from "@/components/electionCampaign/ElectionCampaign";
+import EventSliderHomePage from "@/components/event/EventSliderHomePage";
+import IntroductionVideo from "@/components/introductionVideo/IntroductionVideo";
+import OurConcern from "@/components/OurConcern";
+import VoiceOnMedia from "@/components/VoiceOnMedia";
+import { TFeatures } from "@/types/types";
+import React, { useEffect, useState } from "react";
 
 const HomePage = () => {
   const [features, setFeatures] = useState<TFeatures | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/features`);
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_API_URL}/features`,
+      );
       const data = await res.json();
       setFeatures(data.data);
     };
@@ -24,31 +25,34 @@ const HomePage = () => {
 
   if (!features) return null;
   return (
-
-    <div >
+    <div>
       {/* banner */}
       <Banner bannerData={features.banner} />
-      <section className=' py-20'>
+
+      <section className="lg:py-20 px-3 bg-transparent" style={{
+          backgroundImage: "url('/Images/testi-bg.jpg')",
+          backgroundSize: "cover",
+          // backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}>
         {/* our concern section  */}
-        <div className='flex justify-center items-center w-full'>
+        <div className="flex justify-center items-center w-full">
           <OurConcern ourConcernIssue={features.ourConcernIssue} />
         </div>
 
-
         {/* introductionVideo */}
-        <div className='flex justify-center items-center'>
+        <div className="flex justify-center items-center">
           <IntroductionVideo />
         </div>
       </section>
 
-
       {/* election Campaign */}
-      <div >
+      <div>
         <ElectionCampaign electionCampaign={features.electionCampaign} />
       </div>
 
       {/* event slider */}
-      <div className='flex justify-center items-center'>
+      <div className="flex justify-center items-center">
         <EventSliderHomePage />
       </div>
 
@@ -61,7 +65,6 @@ const HomePage = () => {
       <div>
         <VoiceOnMedia />
       </div>
-
     </div>
   );
 };
