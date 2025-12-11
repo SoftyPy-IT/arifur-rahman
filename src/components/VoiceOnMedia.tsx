@@ -49,7 +49,7 @@ const VoiceOnMedia = () => {
       <Image src={bgimg} alt="img" fill className="" />
       <div className="relative container mx-auto">
         <div className="py-20"> 
-          <h2 className="text-4xl text-blue-950 text-center font-bold">
+          <h2 className="text-4xl text-white text-center font-bold">
             Videos
           </h2>
 
@@ -94,7 +94,7 @@ const VoiceOnMedia = () => {
                       />
                     </div>
 
-                    <h2 className="text-md font-bold my-3 text-blue-950 px-5">
+                    <h2 className="text-md font-bold my-3 text-white px-5">
                       {media?.title}
                     </h2>
                   </div>

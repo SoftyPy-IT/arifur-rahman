@@ -22,7 +22,7 @@ const PhotoFrame = () => {
             data-aos="fade-up"
             data-aos-delay="400"
             data-aos-duration="1000"
-            className="text-4xl font-bold text-blue-900"
+            className="text-4xl font-bold text-white"
           >
             A Voice for the Voiceless, A Leader for the Nation.
           </h1>
