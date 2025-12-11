@@ -46,8 +46,10 @@ const Footer = () => {
                   <p className=" text-2xl md:text-4xl lg:text-2xl font-bold">
                     {banner?.name}
                   </p>
-                  <p className="text-sm">{banner?.designation}</p>
-                  <p className="text-sm">{banner?.partyname}</p>
+                  <p className="text-sm" dangerouslySetInnerHTML={{
+                  __html: banner?.designation as string,
+                }}></p>
+                  {/* <p className="text-sm">{banner?.partyname}</p> */}
                 </div>
               </Link>
             </div>

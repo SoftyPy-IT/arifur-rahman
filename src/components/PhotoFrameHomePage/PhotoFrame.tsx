@@ -46,27 +46,32 @@ const PhotoFrame = () => {
             className="gallery "
           >
             {/* 3 */}
-            <img src="/Images/saifalikhan.jpg" alt="a house on a mountain" />
+            <img src="/Images/2.jpeg" alt="a house on a mountain" />
 
             {/* middle center image */}
             <img src="/Images/khaledazia.jpeg" alt="some pink flowers" />
+
             {/* 1 */}
-            <img src="/Images/1.jpg" alt="big rocks with some trees" />
+            <img src="/Images/1.jpeg" alt="big rocks with some trees" />
+
             {/* 6 */}
             <img
-              src="/Images/6.jpg"
+              src="/Images/6.jpeg"
               alt="a waterfall, a lot of tree and a great view from the sky"
             />
+
             {/* 2 */}
-            <img src="/Images/4.jpg" alt="a cool landscape" />
+            <img src="/Images/4.jpeg" alt="a cool landscape" />
+
             {/* 7 */}
             <img
-              src="/Images/press.jpg"
+              src="/Images/3.jpeg"
               alt="inside a town between two big buildings"
             />
+
             {/* 5 */}
             <img
-              src="/Images/5.jpg"
+              src="/Images/5.jpeg"
               alt="a great view of the sea above the mountain"
             />
           </div>
