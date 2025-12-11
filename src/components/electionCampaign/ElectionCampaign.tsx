@@ -55,7 +55,7 @@ const ElectionCampaign = ({
 
       <div className="relative">
         {/* Background Image */}
-        <Image src={bgimg} alt="img"  className="absolute -z-10" />
+        <Image src={bgimg} alt="img"  className="absolute -z-10 h-[1100px]" />
 
         {/* Content on top */}
         <div className="relative flex flex-col items-center space-y-0 pt-20">

@@ -7,7 +7,7 @@ const PhotoFrame = () => {
   return (
     <>
     {/* <Image src={bgimg} alt="img"/> */}
-    <div className=" container ">
+    <div className=" container my-10">
 
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-12 lg:px-10">
         <div className="space-y-5 p-5 text-center lg:text-left lg:w-1/2">
@@ -46,32 +46,32 @@ const PhotoFrame = () => {
             className="gallery "
           >
             {/* 3 */}
-            <img src="/Images/2.jpeg" alt="a house on a mountain" />
+            <img src="/Images/1.webp" alt="a house on a mountain" />
 
             {/* middle center image */}
-            <img src="/Images/khaledazia.jpeg" alt="some pink flowers" />
+            <img src="/Images/2.webp" alt="some pink flowers" />
 
             {/* 1 */}
-            <img src="/Images/1.jpeg" alt="big rocks with some trees" />
+            <img src="/Images/3.webp" alt="big rocks with some trees" />
 
             {/* 6 */}
             <img
-              src="/Images/6.jpeg"
+              src="/Images/4.webp"
               alt="a waterfall, a lot of tree and a great view from the sky"
             />
 
             {/* 2 */}
-            <img src="/Images/4.jpeg" alt="a cool landscape" />
+            <img src="/Images/5.webp" alt="a cool landscape" />
 
             {/* 7 */}
             <img
-              src="/Images/3.jpeg"
+              src="/Images/6.webp"
               alt="inside a town between two big buildings"
             />
 
             {/* 5 */}
             <img
-              src="/Images/5.jpeg"
+              src="/Images/7.webp"
               alt="a great view of the sea above the mountain"
             />
           </div>
