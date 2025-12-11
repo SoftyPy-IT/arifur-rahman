@@ -86,7 +86,7 @@ export type TBanner = {
   name: string;
   designation: string;
   partyname: string;
-  image: string;
+  imageUrl: string;
   updatedAt: string;
 };
 

@@ -30,7 +30,7 @@ const Navbar = async ({ bannerData }: { bannerData: TBanner }) => {
           <div className="flex flex-col lg:flex-row justify-between items-center z-10 text-center">
             <div className="lg:hidden">
               <Image
-                src={bannerData?.image || ""}
+                src={bannerData?.imageUrl || ""}
                 // src={image1}
                 alt="Banner Image"
                 height={500}
@@ -43,7 +43,7 @@ const Navbar = async ({ bannerData }: { bannerData: TBanner }) => {
                 data-aos="fade-left"
                 data-aos-delay="200"
                 data-aos-duration="1000"
-                className="md:mb-5 mb-2 text-4xl lg:text-6xl font-bold text-black"
+                className="md:mb-5 mb-2 text-4xl font-bold text-black"
               >
                 {bannerData?.name}
               </h1>
@@ -67,7 +67,7 @@ const Navbar = async ({ bannerData }: { bannerData: TBanner }) => {
             </div>
             <div className="hidden lg:block">
               <Image
-                src={bannerData?.image || ""}
+                src={bannerData?.imageUrl || ""}
                 // src={image1}
                 alt="Banner Image"
                 height={500}
