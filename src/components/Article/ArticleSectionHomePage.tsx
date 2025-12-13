@@ -33,14 +33,13 @@ const ArticleSectionHomePage = () => {
 
       <button className="text-white absolute z-20 top-5 text-3xl right-5">
         <Link href={"/articles"}>
-          {" "}
           <FaExternalLinkAlt />
         </Link>
       </button>
 
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      {/* Content */}
+
       <h3 className="text-4xl font-bold text-white text-center relative z-10">
         Articles
       </h3>
