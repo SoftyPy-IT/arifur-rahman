@@ -69,7 +69,7 @@ const Navbar = () => {
           } transition-all duration-500`}
         ></div>
 
-        <div className="container mx-auto flex items-center justify-between px-3 lg:px-0 py-2 lg:py-0 h-[90px] relative z-10">
+        <div className="container mx-auto flex items-center justify-between px-3 lg:px-0 py-2 lg:py-0 md:h-[90px] relative z-10">
           {/* Logo with special background */}
           <div className="relative z-30 flex items-center ">
             <div className="w-[120px] relative">
@@ -84,7 +84,7 @@ const Navbar = () => {
                   src={features?.logo || ""}
                   alt="logo"
                   fill
-                  className="object-contain"
+                  className=""
                 />
               </div>
 
@@ -138,7 +138,7 @@ const Navbar = () => {
             {!openSidebar && (
               <button
                 onClick={() => setOpenSideBar(!openSidebar)}
-                className="relative z-10 p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20"
+                className="relative z-10 p-2 rounded-lg bg-black/60 backdrop-blur-sm border border-white/20"
               >
                 <IoMenuSharp className="text-2xl text-white" />
               </button>

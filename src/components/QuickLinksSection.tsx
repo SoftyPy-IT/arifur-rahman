@@ -38,31 +38,31 @@ const quickLinks = [
 
 const QuickLinksSection = () => {
   return (
-    <div className='flex flex-col md:flex-row gap-6 lg:gap-10'>
+    <div className='flex flex-row gap-2 lg:gap-10'>
       {quickLinks.map((item, index) => (
         <div
           key={index}
           data-aos="fade-up"
           data-aos-duration="500"
-          className={`group lg:w-[280px] rounded-lg p-5 space-y-6 text-center shadow-2xl flex flex-col justify-center items-center border bg-white transition-all duration-300 ease-in-out mb-4 md:mb-0 ${item.hoverBg}`}
+          className={`group lg:w-[280px] rounded-lg p-[3px] md:p-5 md:space-y-6 text-center shadow-2xl flex flex-col justify-center items-center border bg-white transition-all duration-300 ease-in-out mb-0 md:mb-0 ${item.hoverBg}`}
         >
           {/* Icon with hover effect */}
           <div
-            className={`-mt-[60px] rounded-full p-6 md:p-5 lg:p-6 bg-white transition-all duration-300 transform group-hover:scale-110 ${item.hoverCircleBg}`}
+            className={`-mt-4 md:-mt-[60px] rounded-full p-2 md:p-5 lg:p-6 bg-white transition-all duration-300 transform group-hover:scale-110 ${item.hoverCircleBg}`}
           >
             <span
-              className={`text-4xl transition-colors duration-300 ${item.iconColor} ${item.hoverIconColor}`}
+              className={`md:text-4xl transition-colors duration-300 ${item.iconColor} ${item.hoverIconColor}`}
             >
               {item.icon}
             </span>
           </div>
 
           {/* Title */}
-          <h3 className='text-3xl font-bold'>{item.title}</h3>
+          <h3 className='md:text-3xl font-bold mb-2'>{item.title}</h3>
 
           {/* Link Button */}
           <Link href={item.href}>
-            <button className='hover-border-button'>{item.buttonText}</button>
+            <button className='w-[90px] md:w-[200px] text-[10px] md:text-base font-light md:font-bold py-2 md:py-4 bg-[#0c5adb] text-white rounded '>{item.buttonText}</button>
           </Link>
         </div>
       ))}

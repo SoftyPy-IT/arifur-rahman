@@ -28,18 +28,18 @@ const Footer = () => {
         className="absolute right-0 bottom-0 w-32 opacity-40"
       />
 
-      <div className="container mx-auto px-6 py-10 relative z-10 grid gap-10 lg:grid-cols-4">
+      <div className="container mx-auto px-6 py-10 relative z-10 grid gap-10 lg:grid-cols-4 text-center md:text-start">
         {/* Banner / Logo */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
           <p className="text-2xl md:text-3xl font-bold">{banner?.name}</p>
           <p
             className="text-sm mt-1"
             dangerouslySetInnerHTML={{ __html: banner?.designation || "" }}
-          ></p>
+          />
         </div>
 
         {/* Navigation */}
-        <div>
+        <div >
           <h3 className="uppercase font-semibold mb-2">Visit</h3>
           <ul className="space-y-1 text-sm">
             <li><Link href="/about">About</Link></li>
@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Contact & Social */}
         <div>
           <h3 className="uppercase font-semibold mb-2">Contact</h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="flex flex-col items-center md:items-start space-y-2 text-sm">
             <li className="flex items-center gap-2">
               <FiPhone className="text-white w-5 h-5" />
               <Link href={`tel:${contact?.phone || ""}`}>
@@ -92,7 +92,7 @@ const Footer = () => {
             </li>
           </ul>
 
-          <div className="flex gap-2 mt-4">
+          <div className="flex justify-center md:justify-start gap-2 mt-4">
             <Link
               href={contact?.facebookUrl || "#"}
               target="_blank"

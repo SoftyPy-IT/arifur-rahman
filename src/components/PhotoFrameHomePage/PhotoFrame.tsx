@@ -9,12 +9,12 @@ const PhotoFrame = () => {
     {/* <Image src={bgimg} alt="img"/> */}
     <div className=" container my-10">
 
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-12 lg:px-10">
-        <div className="space-y-5 p-5 text-center lg:text-left lg:w-1/2">
+      <div className="flex flex-col-reverse lg:flex-row justify-between items-center md:gap-12 px-3 lg:px-10">
+        <div className="space-y-3 md:space-y-5 md:p-5 text-center lg:text-left lg:w-1/2">
           <h3
             data-aos="fade-up"
             data-aos-duration="1000"
-            className="text-orange-500 font-semibold"
+            className="text-orange-500 md:font-semibold"
           >
             A Leader for Progress and Unity
           </h3>
@@ -22,11 +22,11 @@ const PhotoFrame = () => {
             data-aos="fade-up"
             data-aos-delay="400"
             data-aos-duration="1000"
-            className="text-4xl font-bold text-white"
+            className="text-2xl md:text-4xl font-bold text-white"
           >
             A Voice for the Voiceless, A Leader for the Nation.
           </h1>
-          <p data-aos="fade-up" data-aos-duration="1000">
+          <p data-aos="fade-up" data-aos-duration="1000" className=" text-sm md:text-base text-justify">
             Arifur Rahman, has played a pivotal role in the development and
             progress of his constituency. A dedicated member of the Bangladesh
             Nationalist Party (BNP), Arifur Rahman&apos;s leadership has been
