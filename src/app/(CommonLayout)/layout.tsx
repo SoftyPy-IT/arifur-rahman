@@ -3,6 +3,8 @@ import Navbar from "@/components/navbar/Navbar";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import React from "react";
 
+
+
 const layout = ({
   children,
 }: Readonly<{

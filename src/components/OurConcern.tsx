@@ -1,6 +1,6 @@
 import { TOurConcernIssue } from "@/types/types";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 // import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
@@ -58,9 +58,9 @@ const OurConcernIssue = ({
               )}
             </div>
 
-            <Link href={"/events"}>
+            {/* <Link href={"/events"}>
               <button className="hover-border-button mt-6">More Program</button>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Image */}

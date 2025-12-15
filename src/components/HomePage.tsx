@@ -80,7 +80,7 @@ const HomePage = () => {
       </section>
 
       {/* Election Campaign */}
-      <div className="mt-10">
+      <div className="">
         <ElectionCampaign electionCampaign={features.electionCampaign} />
       </div>
 
@@ -89,13 +89,13 @@ const HomePage = () => {
         <EventSliderHomePage />
       </div>
 
-      {/* Articles */}
-      <div className="mt-10">
+      {/* Articles */} 
+      <div className="">
         <ArticleSectionHomePage />
       </div>
 
       {/* Voice on Media */}
-      <div className="mt-10">
+      <div className="">
         <VoiceOnMedia />
       </div>
     </div>

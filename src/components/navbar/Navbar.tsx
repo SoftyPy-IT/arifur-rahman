@@ -80,12 +80,15 @@ const Navbar = () => {
               ></div>
 
               <div className="relative aspect-[10/6] rounded-lg shadow-lg">
+                <Link href={"/"}>
                 <Image
                   src={features?.logo || ""}
                   alt="logo"
                   fill
                   className=""
+                  
                 />
+                </Link>
               </div>
 
               {/* Add this style tag for the custom clip-path */}

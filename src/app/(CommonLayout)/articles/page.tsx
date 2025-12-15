@@ -7,7 +7,7 @@ import useAxiosPublic from '@/hooks/useAxiosPublic';
 import { TArticle } from '@/types/types';
 
 
-const Articles = () => {
+const Articles = () => { 
   const limit = 6;
   const axiosPublic = useAxiosPublic();
   const [currentPage, setCurrentPage] = useState(1);

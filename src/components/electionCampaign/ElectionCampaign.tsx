@@ -17,7 +17,7 @@ const ElectionCampaign = ({
     <div>
       <div
         style={{ backgroundImage: `url(${electionCampaign?.bgImageUrl})` }}
-        className="  min-h-screen bg-cover bg-center bg-fixed flex justify-center items-center relative py-3 px-3 lg:pb-14"
+        className="  min-h-screen bg-cover bg-center bg-fixed flex justify-center items-center relative py-10 px-3 lg:pb-14"
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

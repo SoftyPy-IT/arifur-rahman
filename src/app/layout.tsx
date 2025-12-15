@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import React from "react";
+import { Hind_Siliguri } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const siliguri = Hind_Siliguri({
+  weight: "400",
+  subsets: ["bengali"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+
 
 export const metadata: Metadata = {
   // metadataBase: new URL("https://saifalikhan.info"),
@@ -51,7 +47,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${siliguri.className} antialiased`}
       >
         {children}
       </body>
