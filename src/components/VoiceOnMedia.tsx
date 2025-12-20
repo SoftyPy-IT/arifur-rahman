@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 import { TVoiceOnMedia } from "@/types/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -17,7 +17,7 @@ const VoiceOnMedia = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axiosPublic.get(`voice-on-media?limit=${limit}`);
+        const response = await axiosPublic.get(`videos?limit=${limit}`);
         const { totalCount, data } = response?.data?.data;
         console.log(totalCount, data);
         setMedias(data);
@@ -66,7 +66,7 @@ const VoiceOnMedia = () => {
                   medias?.slice(0, 3).map((media: TVoiceOnMedia) => (
                     <div
                       key={media?._id}
-                      className="w-full max-w-[383px] bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-lg hover:shadow-xl hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                      className="w-full max-w-[383px] h-full bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-lg hover:shadow-xl hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                     >
                       {/* Video container */}
                       <div

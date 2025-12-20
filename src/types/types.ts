@@ -39,11 +39,17 @@ export type TPhoto = {
   folder: string;
 };
 
-export type TVideo = {
-  _id?: string;
+// types/video.types.ts
+export interface TVideo {
+  _id: string;
   folder: string;
   videoUrl: string;
-};
+  title?: string;
+  videoType: 'youtube' | 'facebook';
+  thumbnail?: string;
+  createdAt: string;
+  updatedAt: string;
+}
 
 export type TEvent = {
   _id: string;

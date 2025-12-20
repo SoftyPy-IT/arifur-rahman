@@ -4,7 +4,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import HeroMediaBanner from "./HeroMediaBanner";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 import { TVoiceOnMedia } from "@/types/types";
 
 const Media = () => {
@@ -20,7 +20,7 @@ const Media = () => {
     const getData = async () => {
       try {
         const response = await axiosPublic.get(
-          `voice-on-media?limit=${limit}&page=${currentPage}`
+          `videos?limit=${limit}&page=${currentPage}`
         );
         const { totalCount, data } = response?.data?.data;
         console.log(totalCount, data);
@@ -72,7 +72,7 @@ const Media = () => {
               medias?.map((media: TVoiceOnMedia) => (
                 <div
                   key={media?._id}
-                  className="w-full max-w-[383px] bg-gray-50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                  className="w-full max-w-[383px] h-full bg-gray-50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 >
                   {/* Video container with loading state */}
                   <div className="relative w-full" style={{ paddingTop: "56.25%" }}>

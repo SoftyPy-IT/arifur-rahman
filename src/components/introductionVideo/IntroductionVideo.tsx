@@ -10,15 +10,29 @@ type TWhoWeAreInfo = {
   isLoading: any;
 };
 
-// Extract YouTube ID from URL
-const getYouTubeId = (url: string) => {
-  const match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
-  return match ? match[1] : null;
+// Extract Facebook Video ID from URL
+const getFacebookVideoId = (url: string) => {
+  // Handle different Facebook video URL formats
+  const patterns = [
+    /facebook\.com\/watch\/\?v=(\d+)/,
+    /facebook\.com\/[^\/]+\/videos\/(\d+)/,
+    /fb\.watch\/([a-zA-Z0-9_-]+)/,
+    /facebook\.com\/video\.php\?v=(\d+)/
+  ];
+  
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match && match[1]) {
+      return match[1];
+    }
+  }
+  
+  return null;
 };
 
 const IntroductionVideo = () => {
   const { whoWeAre, isLoading }: TWhoWeAreInfo = useFeatures();
-  const videoId = whoWeAre?.videourl ? getYouTubeId(whoWeAre.videourl) : null;
+  const videoId = whoWeAre?.videourl ? getFacebookVideoId(whoWeAre.videourl) : null;
 
   return (
     <div>
@@ -42,7 +56,7 @@ const IntroductionVideo = () => {
             </Link>
           </div>
           
-          {/* YouTube embed with responsive container */}
+          {/* Facebook Video Embed */}
           {videoId && (
             <div
               data-aos="fade-up"
@@ -51,13 +65,12 @@ const IntroductionVideo = () => {
             >
               <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
                 <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
-                  src={`https://www.youtube.com/embed/${videoId}`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                  src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D${videoId}&show_text=false&t=0`}
+                  className="absolute top-0 left-0 w-full h-full border-0"
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title="Facebook Video"
+                />
               </div>
             </div>
           )}
