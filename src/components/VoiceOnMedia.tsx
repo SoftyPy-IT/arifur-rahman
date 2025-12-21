@@ -14,6 +14,10 @@ const VoiceOnMedia = () => {
   const [videoReady, setVideoReady] = useState<{ [key: string]: boolean }>({});
   const limit = 3;
 
+  const isFacebookVideo = (url: string) => {
+    return url.includes('facebook.com') || url.includes('fb.watch');
+  };
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -42,6 +46,23 @@ const VoiceOnMedia = () => {
     setVideoReady((prev) => ({ ...prev, [id]: true }));
   };
 
+  const handleIframeLoad = (id: string) => {
+    setVideoReady((prev) => ({ ...prev, [id]: true }));
+  };
+
+  // Function to extract Facebook video ID from URL
+  const getFacebookEmbedUrl = (url: string) => {
+    // For Facebook videos
+    if (url.includes('facebook.com')) {
+      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=280`;
+    }
+    // For Facebook watch URLs
+    if (url.includes('fb.watch')) {
+      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=280`;
+    }
+    return url;
+  };
+
   return (
     <>
       <div className="relative">
@@ -63,47 +84,69 @@ const VoiceOnMedia = () => {
             >
               <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center mb-8 mt-10 gap-8 px-4">
                 {isClient &&
-                  medias?.slice(0, 3).map((media: TVoiceOnMedia) => (
-                    <div
-                      key={media?._id}
-                      className="w-full max-w-[383px] h-full bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-lg hover:shadow-xl hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
-                    >
-                      {/* Video container */}
+                  medias?.slice(0, 3).map((media: TVoiceOnMedia) => {
+                    const isFacebook = isFacebookVideo(media?.videoUrl);
+                    
+                    return (
                       <div
-                        className="relative w-full"
-                        style={{ paddingTop: "56.25%" }}
+                        key={media?._id}
+                        className="w-full max-w-[383px] h-full bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 shadow-lg hover:shadow-xl hover:border-blue-400/50 transition-all duration-300 hover:-translate-y-1 flex flex-col"
                       >
-                        {!videoReady[media._id] && (
-                          <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
-                            <div className="animate-pulse text-gray-400">
-                              Loading video...
+                        {/* Video container */}
+                        <div
+                          className="relative w-full"
+                          style={{ paddingTop: "56.25%" }}
+                        >
+                          {!videoReady[media._id] && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-gray-800">
+                              <div className="animate-pulse text-gray-400">
+                                Loading video...
+                              </div>
                             </div>
-                          </div>
-                        )}
-                        <ReactPlayer
-                          url={media?.videoUrl}
-                          width="100%"
-                          height="100%"
-                          controls
-                          onReady={() => handleVideoReady(media._id)}
-                          style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            opacity: videoReady[media._id] ? 1 : 0,
-                            transition: "opacity 0.3s ease-in",
-                          }}
-                        />
-                      </div>
+                          )}
+                          {isFacebook ? (
+                            // Facebook iframe embed (works for both regular videos and reels)
+                            <iframe
+                              src={getFacebookEmbedUrl(media.videoUrl)}
+                              className="absolute top-0 left-0 w-full h-full border-0"
+                              scrolling="no"
+                              allowFullScreen={true}
+                              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                              title="Facebook Video"
+                              onLoad={() => handleIframeLoad(media._id)}
+                              style={{
+                                opacity: videoReady[media._id] ? 1 : 0,
+                                transition: "opacity 0.3s ease-in",
+                              }}
+                            />
+                          ) : (
+                            // YouTube or other videos using ReactPlayer
+                            <ReactPlayer
+                              url={media.videoUrl}
+                              width="100%"
+                              height="100%"
+                              controls
+                              onReady={() => handleVideoReady(media._id)}
+                              style={{
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                opacity: videoReady[media._id] ? 1 : 0,
+                                transition: "opacity 0.3s ease-in",
+                              }}
+                            />
+                          )}
+                        </div>
 
-                      {/* Title container with fixed height */}
-                      <div className="p-5 flex-grow flex items-center min-h-[80px]">
-                        <h2 className="text-lg font-bold text-white line-clamp-2">
-                          {media?.title}
-                        </h2>
+                        {/* Title container with fixed height */}
+                        <div className="p-5 flex-grow flex items-center min-h-[80px]">
+                          <h2 className="text-lg font-bold text-white line-clamp-2">
+                            {media?.title}
+                          </h2>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
               </section>
             </div>
 
@@ -117,8 +160,8 @@ const VoiceOnMedia = () => {
               >
                 <button
                   className="relative px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 
-                               text-white font-semibold rounded-full overflow-hidden 
-                               hover:shadow-xl hover:shadow-blue-900/30 transition-all duration-300"
+                             text-white font-semibold rounded-full overflow-hidden 
+                             hover:shadow-xl hover:shadow-blue-900/30 transition-all duration-300"
                 >
                   {/* Button Background Effect */}
                   <div

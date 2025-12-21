@@ -10,7 +10,7 @@ const EventCardItem = ({ event }: { event: TEvent }) => {
   return (
     <div
       key={event?._id}
-      className="max-w-[520px]  md:h-[480px] rounded-xl shadow-lg hover:shadow-2xl bg-white border border-gray-200 mx-2 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+      className="max-w-[520px]  md:h-[480px] lg:h-full rounded-xl shadow-lg hover:shadow-2xl bg-white border border-gray-200 mx-2 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
     >
       <Link href={`/events/${event?._id}`} className="h-full flex flex-col">
         {/* Image Container - Full width and height, no padding */}
@@ -29,8 +29,8 @@ const EventCardItem = ({ event }: { event: TEvent }) => {
           {/* Title with underline */}
           <div className="mb-3">
             <h2 className="text-xl font-bold text-blue-950 pb-2 ">
-              {event?.title.length > 60
-                ? `${event?.title?.slice(0, 60)}...`
+              {event?.title.length > 80
+                ? `${event?.title?.slice(0, 80)}...`
                 : event?.title}
             </h2>
           </div>
