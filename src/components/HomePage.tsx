@@ -59,7 +59,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Banner */}
-      <Banner bannerData={features.banner} />
+      <Banner />
 
       {/* Our Concern & Introduction Video */}
       <section
