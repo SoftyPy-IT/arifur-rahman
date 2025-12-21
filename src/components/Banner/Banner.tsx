@@ -33,8 +33,8 @@ export default function HeroClient() {
       setError(null);
       
       // Adjust the API endpoint according to your server
-      const response = await fetch('http://localhost:5010/api/v1/banners');
-      // const response = await fetch('https://server.majumdararif.info/api/v1/banners');
+      // const response = await fetch('http://localhost:5010/api/v1/banners');
+      const response = await fetch('https://server.majumdararif.info/api/v1/banners');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
