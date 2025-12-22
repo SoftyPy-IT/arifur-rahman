@@ -26,7 +26,7 @@ const PhotoFrame = () => {
           >
             A Voice for the Voiceless, A Leader for the Nation.
           </h1>
-          <p data-aos="fade-up" data-aos-duration="1000" className=" text-sm md:text-base text-justify">
+          <p data-aos="fade-up" data-aos-duration="1000" className=" text-sm md:text-base text-justify text-white/80">
             Arifur Rahman, has played a pivotal role in the development and
             progress of his constituency. A dedicated member of the Bangladesh
             Nationalist Party (BNP), Arifur Rahman&apos;s leadership has been
