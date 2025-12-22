@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCreative } from "swiper/modules";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@mui/material";
 
 interface Banner {
   _id: string;
@@ -31,24 +30,25 @@ export default function HeroClient() {
     try {
       setLoading(true);
       setError(null);
-      
+
       // Adjust the API endpoint according to your server
       // const response = await fetch('http://localhost:5010/api/v1/banners');
-      const response = await fetch('https://server.majumdararif.info/api/v1/banners');
-      
+      const response = await fetch(
+        "https://server.majumdararif.info/api/v1/banners"
+      );
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const result = await response.json();
-      
+
       // Extract data based on your API response structure
       const banners = result.data || result || [];
-      
+
       // Filter only active banners
       const activeBanners = banners.filter((banner: Banner) => banner.isActive);
       setSlides(activeBanners);
-      
     } catch (error) {
       console.error("Failed to fetch banners:", error);
       setError("Failed to load banners");
@@ -76,10 +76,8 @@ export default function HeroClient() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
             Unable to load banners
           </h2>
-          <p className="text-gray-600 mb-6">
-            {error}
-          </p>
-          <button 
+          <p className="text-gray-600 mb-6">{error}</p>
+          <button
             onClick={fetchBanners}
             className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
           >
@@ -97,16 +95,14 @@ export default function HeroClient() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
             Welcome to Our Website
           </h2>
-          <p className="text-gray-600 mb-6">
-            No banners available yet
-          </p>
+          <p className="text-gray-600 mb-6">No banners available yet</p>
         </div>
       </div>
     );
   }
 
-   return (
-    <section className="relative w-full">
+  return (
+    <section className="relative w-full pt-[90px] lg:pt-[83px]">
       <Swiper
         effect="creative"
         grabCursor={true}
@@ -128,7 +124,7 @@ export default function HeroClient() {
           },
         }}
         modules={[Autoplay, Navigation, EffectCreative]}
-        className="w-full h-[200px] md:h-[400px] xl:h-[600px] 2xl:h-[800px]"
+        className="w-full h-[300px] md:h-[400px] xl:h-[600px] 2xl:h-[800px]"
       >
         {slides.map((slide: Banner, index: number) => (
           <SwiperSlide key={slide._id}>
@@ -188,24 +184,9 @@ export default function HeroClient() {
                       transition={{ duration: 0.8, delay: 0.5 }}
                     >
                       <Link href="/about">
-                        <Button
-                          variant="outlined"
-                          sx={{
-                            backgroundColor: '#122238',
-                            color: 'white',
-                            borderColor: '#122238',
-                            '&:hover': {
-                              backgroundColor: '#0f1c30',
-                              borderColor: '#0f1c30',
-                            },
-                            fontSize: '1.125rem',
-                            padding: '0.5rem 2rem',
-                            marginTop: '1rem',
-                            fontWeight: '600',
-                          }}
-                        >
+                        <button className="bg-[#122238] text-white text-sm md:text-base p-1 md:p-2 rounded hover:bg-[#203b61]">
                           আরও দেখুন
-                        </Button>
+                        </button>
                       </Link>
                     </motion.div>
                   </div>

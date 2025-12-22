@@ -3,8 +3,6 @@ import Navbar from "@/components/navbar/Navbar";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import React from "react";
 
-
-
 const layout = ({
   children,
 }: Readonly<{
@@ -12,13 +10,10 @@ const layout = ({
 }>) => {
   return (
     <ReactQueryProvider>
-      <div className="text-gray-500">
+      <div className="text-black">
         <Navbar />
-        <main className="  pt-12 min-h-screen">{children}</main>
-        {/* footer  */}
-        <div>
-          <Footer />
-        </div>
+        <main className="">{children}</main>
+        <Footer />
       </div>
     </ReactQueryProvider>
   );
