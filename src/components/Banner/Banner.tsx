@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, EffectCreative } from "swiper/modules";
-import Link from "next/link";
+// import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Banner {
@@ -158,7 +158,7 @@ export default function HeroClient() {
 
                     {slide.title && (
                       <motion.h1
-                        className="text-white text-2xl md:text-4xl lg:text-5xl font-bold"
+                        className="text-white text-lg md:text-4xl lg:text-5xl font-bold"
                         initial={{ y: 40, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.8 }}
@@ -178,7 +178,7 @@ export default function HeroClient() {
                       </motion.p>
                     )}
 
-                    <motion.div
+                    {/* <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.5 }}
@@ -188,7 +188,7 @@ export default function HeroClient() {
                           আরও দেখুন
                         </button>
                       </Link>
-                    </motion.div>
+                    </motion.div> */}
                   </div>
                 </div>
               </div>
