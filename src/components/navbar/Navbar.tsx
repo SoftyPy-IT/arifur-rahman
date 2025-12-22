@@ -74,22 +74,22 @@ const Navbar = () => {
           <div className="relative z-30 flex items-center ">
             <div className="w-[120px] relative">
               {/* Background with extended left and angled right side */}
-              <div
-                className="absolute -inset-2 bg-[#122238] w-[350px] -ml-[100px] 
-                  clip-path-angled-right"
-              ></div>
+              <div className="absolute -inset-2 bg-[#122238] lg:w-[350px] -ml-[100px] clip-path-angled-right" />
 
-              <div className="relative aspect-[10/6] rounded-lg shadow-lg">
+              <div className="relative aspect-[10/6] rounded-lg ">
                 <Link href={"/"}>
+               
                 <Image
-                  src={features?.logo || ""}
-                  alt="logo"
-                  fill
-                  className=""
-                  
-                />
+                    src={features?.logo || ""}
+                    alt="logo"
+                    height={0}
+                    width={85}
+                    className=""
+                  />
                 </Link>
               </div>
+
+              
 
               {/* Add this style tag for the custom clip-path */}
               <style jsx>{`
