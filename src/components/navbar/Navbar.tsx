@@ -1,14 +1,14 @@
 "use client";
-import { IoMenuSharp } from "react-icons/io5";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { AiOutlineClose } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import useFeatures from "@/hooks/useFeatures";
+import Link from "next/link";
+import Image from "next/image";
 import { TFeatures } from "@/types/types";
+import { IoMenuSharp } from "react-icons/io5";
+import { usePathname } from "next/navigation";
+import useFeatures from "@/hooks/useFeatures";
+import { AiOutlineClose } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
 
 type Route = {
   navItem: string;
@@ -62,36 +62,32 @@ const Navbar = () => {
   return (
     <div className="fixed z-20 w-full">
       <nav className="">
-        
         <div
           className={`absolute inset-0 backdrop-blur-md bg-white/10 border-b border-white/20 ${
             scrolling ? "bg-white/20" : ""
           } transition-all duration-500`}
-        ></div>
+        />
 
-        <div className="container mx-auto flex items-center justify-between px-3 lg:px-0 py-2 lg:py-0 md:h-[90px] relative z-10">
+        <div className="container mx-auto flex items-center justify-between px-3 lg:px-0 my-0 lg:py-0 md:h-[90px] relative z-10">
           {/* Logo with special background */}
-          <div className="relative z-30 flex items-center ">
-            <div className="w-[120px] relative">
+          <div className="relative z-30 flex items-end h-full">
+            <div className="w-[130px] relative">
               {/* Background with extended left and angled right side */}
-              <div className="absolute -inset-2 bg-[#122238] lg:w-[350px] -ml-[100px] clip-path-angled-right" />
+              <div className="absolute inset-0 bg-[#122238] p-10 md:p-[46px] -mt-[3px] md:-mt-8 lg:w-[350px] -ml-[120px] clip-path-angled-right my-2" />
 
-              <div className="relative aspect-[10/6] rounded-lg ">
+              {/* Logo */}
+              <div className="relative flex md:justify-center md:items-end md:h-[60px]">
                 <Link href={"/"}>
-               
-                <Image
+                  <Image
                     src={features?.logo || ""}
                     alt="logo"
-                    height={0}
-                    width={85}
+                    height={60} // set height explicitly
+                    width={85} // width according to aspect ratio
                     className=""
                   />
                 </Link>
               </div>
 
-              
-
-              {/* Add this style tag for the custom clip-path */}
               <style jsx>{`
                 .clip-path-angled-right {
                   clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);

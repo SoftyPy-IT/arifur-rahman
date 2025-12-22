@@ -102,7 +102,7 @@ export default function HeroClient() {
   }
 
   return (
-    <section className="relative w-full pt-[90px] lg:pt-[83px]">
+    <section className="relative w-full pt-[77px] lg:pt-[83px]">
       <Swiper
         effect="creative"
         grabCursor={true}
