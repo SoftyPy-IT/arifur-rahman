@@ -35,7 +35,7 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="w-full bg-white flex justify-center items-center mt-20">
+    <div className="w-full bg-white flex justify-center items-center pt-[85px]">
       <div className="container ">
         <div className="lg:w-3/5 mx-auto">
           <div className="px-5 pb-10">

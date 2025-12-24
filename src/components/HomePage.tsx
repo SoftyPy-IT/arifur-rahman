@@ -85,7 +85,7 @@ const HomePage = () => {
       </div>
 
       {/* Event Slider */}
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex justify-center items-center lg:mt-10">
         <EventSliderHomePage />
       </div>
 

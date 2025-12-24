@@ -32,7 +32,7 @@ const ArticleDetails = () => {
   }
 
   return (
-    <div className="flex justify-center mt-20">
+    <div className="flex justify-center pt-[85px]">
       <div className="w-full bg-white  container ">
         <div className="lg:w-3/5 mx-auto">
           <div className="px-5 pb-10">

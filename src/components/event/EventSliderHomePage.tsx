@@ -45,7 +45,7 @@ const EventSliderHomePage = () => {
 
         {/* Slider Content Overlay */}
         <div className="absolute top-0 left-0 w-full">
-          <section className="container mx-auto px-4 py-16">
+          <section className="container mx-auto px-4 py-6 lg:py-16">
             {/* Title with Underline */}
             <div className="text-center mb-8">
               <h3 className="text-4xl font-bold text-blue-950 inline-block pb-3 border-b-4 border-blue-500">
@@ -109,7 +109,7 @@ const EventSliderHomePage = () => {
                 {events?.map((event: TEvent, i) => (
                   <SwiperSlide
                     key={i}
-                    className="py-14 sm:mx-10 sm:px-5 lg:mx-0 lg:px-0"
+                    className="py-6 lg:py-14 sm:mx-10 sm:px-5 lg:mx-0 lg:px-0"
                   >
                     <EventCardItem event={event} />
                   </SwiperSlide>

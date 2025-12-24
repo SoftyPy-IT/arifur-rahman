@@ -16,7 +16,7 @@ const PhotoFrame = () => {
             data-aos-duration="1000"
             className="text-orange-500 md:font-semibold"
           >
-            A Leader for Progress and Unity
+            A Leader for Progress and Unity 
           </h3>
           <h1
             data-aos="fade-up"
