@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useEffect, useState } from "react";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
@@ -23,7 +24,9 @@ const VoiceOnMedia = () => {
       try {
         const response = await axiosPublic.get(`videos?limit=${limit}`);
         const { totalCount, data } = response?.data?.data;
-        console.log(totalCount, data);
+
+        // console.log(totalCount, data);
+        
         setMedias(data);
 
         const readyStates: { [key: string]: boolean } = {};

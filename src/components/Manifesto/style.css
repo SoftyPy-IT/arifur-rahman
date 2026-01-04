@@ -1,0 +1,62 @@
+   .gallery {
+    --s: 200px; 
+    --g: 10px; 
+    display: grid;
+    margin: calc(var(--s) + var(--g));
+  }
+  
+  .gallery > img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 0.866;
+    object-fit: cover;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+    transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+    cursor: pointer;
+    transition: 0.2s linear;
+  }
+  
+  .gallery > img:hover {
+    z-index: 1;
+    --_t: 1.05;
+  }
+  
+  .gallery > img:nth-child(1) {
+    --_x: calc(-100% - var(--g));
+  }
+  .gallery > img:nth-child(7) {
+    --_x: calc(100% + var(--g));
+  }
+  .gallery > img:nth-child(3),
+  .gallery > img:nth-child(5) {
+    --_y: calc(-75% - 0.87 * var(--g));
+  }
+  .gallery > img:nth-child(4),
+  .gallery > img:nth-child(6) {
+    --_y: calc(75% + 0.87 * var(--g));
+  }
+  .gallery > img:nth-child(3),
+  .gallery > img:nth-child(4) {
+    --_x: calc(-50% - 0.5 * var(--g));
+  }
+  .gallery > img:nth-child(5),
+  .gallery > img:nth-child(6) {
+    --_x: calc(50% + 0.5 * var(--g));
+  }
+  
+  
+  @media (max-width: 768px) {
+    .gallery {
+      --s: 150px; 
+      --g: 8px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery {
+      --s: 100px; 
+      --g: 5px; 
+    }
+  }
+
+  

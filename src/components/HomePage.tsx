@@ -10,6 +10,8 @@ import IntroductionVideo from "@/components/introductionVideo/IntroductionVideo"
 import OurConcern from "@/components/OurConcern";
 import VoiceOnMedia from "@/components/VoiceOnMedia";
 import { TFeatures } from "@/types/types";
+import PlanSliderHomePage from "./Plan/PlanSliderHomePage";
+import Manifesto from "./Manifesto/page.tsx";
 
 const HomePage = () => {
   const [features, setFeatures] = useState<TFeatures | null>(null);
@@ -19,7 +21,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/features`);
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_API_URL}/features`
+        );
 
         if (!res.ok) {
           throw new Error(`API error: ${res.status}`);
@@ -78,18 +82,24 @@ const HomePage = () => {
           <IntroductionVideo />
         </div>
       </section>
+      <div className="">
+        <PlanSliderHomePage />
+      </div>
 
       {/* Election Campaign */}
       <div className="">
         <ElectionCampaign electionCampaign={features.electionCampaign} />
       </div>
 
+      <div className="">
+        <Manifesto />
+      </div>
       {/* Event Slider */}
       <div className="flex justify-center items-center lg:mt-10">
         <EventSliderHomePage />
       </div>
 
-      {/* Articles */} 
+      {/* Articles */}
       <div className="">
         <ArticleSectionHomePage />
       </div>

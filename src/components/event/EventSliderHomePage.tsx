@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -27,7 +28,7 @@ const EventSliderHomePage = () => {
           `events?type=previous&limit=${limit}`
         );
         const { totalCount, data } = response?.data?.data;
-        console.log(totalCount, data);
+        // console.log(totalCount, data);
         setEvents(data);
       } catch (error) {
         console.log(error);
@@ -35,7 +36,7 @@ const EventSliderHomePage = () => {
     };
     getData();
   }, [axiosPublic]);
-  console.log(events);
+  // console.log(events);
 
   return (
     <>

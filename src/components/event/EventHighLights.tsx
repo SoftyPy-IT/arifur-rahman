@@ -16,7 +16,7 @@ const EventHighLights = () => {
         try {
         const response = await axiosPublic.get(`events?type=previous&limit=${limit}&page=${currentPage}`);
         const {totalCount,data}= response?.data?.data
-        console.log(totalCount,data);
+        // console.log(totalCount,data);
         setEvents(data);
         setTotalCount(totalCount);
         } catch (error) {
@@ -26,7 +26,7 @@ const EventHighLights = () => {
           }      
     getData();   
     },[currentPage,axiosPublic])
-  console.log(events);  
+  // console.log(events);  
   return (
     <div>
         <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-between items-center gap-10'>

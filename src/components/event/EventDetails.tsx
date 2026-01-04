@@ -21,7 +21,7 @@ const EventDetails = () => {
         const response1 = await axiosPublic.get(`events/${id}`);
         const result = response1.data.data;
         setEvent(result);
-        console.log(result);
+        // console.log(result);
       } catch (error) {
         console.error("Error fetching the data:", error);
       }

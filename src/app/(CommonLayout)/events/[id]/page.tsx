@@ -21,7 +21,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseApi = process.env.NEXT_PUBLIC_BASE_API_URL;
   const id = (await params).id;
-  console.log(id);
+  // console.log(id);
   const res = await fetch(`${baseApi}/events/${id}`,{cache:"no-cache"});
   const data = await res.json();
   const finalData:TEvent = data.data;

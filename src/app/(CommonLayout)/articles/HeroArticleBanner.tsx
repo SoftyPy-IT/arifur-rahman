@@ -15,7 +15,7 @@ const HeroArticleBanner = () => {
       const result= response.data.data;
       const articleHero:THeroSection = result.find((item:THeroSection)=>item.category==="Article");
       setBannerInfo(articleHero);
-      console.log(result);
+      // console.log(result);
       } catch (error) {
       console.log(error);  
       }

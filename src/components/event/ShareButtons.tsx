@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
@@ -23,7 +24,8 @@ const ShareButtons = ({shareUrl,quote,hashtag,
         setOpen(true);
       };
     
-      console.log("Share URL:", shareUrl, "Quote:", quote, "Hashtag:", hashtag,"title:",title);
+      // console.log("Share URL:", shareUrl, "Quote:", quote, "Hashtag:", hashtag,"title:",title);
+
       const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
         <Tooltip {...props} classes={{ popper: className }} />
       ))(({ theme }) => ({

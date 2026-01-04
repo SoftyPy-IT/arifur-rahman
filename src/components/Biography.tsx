@@ -42,7 +42,9 @@ const Biography = () => {
 
     getData();
   }, []);
-  console.log(biographyInfo);
+
+  // console.log(biographyInfo);
+  
   return (
     <section
       data-aos="fade-up"
