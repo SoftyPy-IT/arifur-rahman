@@ -14,7 +14,7 @@ const HeroSection = ({
   category: string;
 }) => {
   return (
-    <div>
+    <div className="pt-[90px]">
       {/* md screen  */}
       <div
         style={{ backgroundImage: `url(${imageUrlMd})` }}

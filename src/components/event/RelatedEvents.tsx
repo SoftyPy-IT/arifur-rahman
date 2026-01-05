@@ -13,7 +13,7 @@ const RelatedEvents = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axiosPublic.get(`events?type=previous&limit=${limit}`);
+        const response = await axiosPublic.get(`events?&limit=${limit}&sort=-date`);     
         const {data}= response?.data?.data
         setEvents(data);
       } catch (error) {

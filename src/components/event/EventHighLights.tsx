@@ -14,7 +14,7 @@ const EventHighLights = () => {
    useEffect(()=>{
       const getData =async()=>{
         try {
-        const response = await axiosPublic.get(`events?&limit=${limit}&page=${currentPage}&sort=-createdAt`);
+        const response = await axiosPublic.get(`events?&limit=${limit}&page=${currentPage}&sort=-date`);
         const {totalCount,data}= response?.data?.data
         // console.log(totalCount,data);
         setEvents(data);

@@ -23,9 +23,10 @@ const Contact = () => {
   }
 
   return (
+    <div className="pt-[80px]">
     <div 
       style={{ backgroundImage: `url(${contact?.bgImageUrl})` }}
-      className="relative min-h-screen bg-cover bg-center bg-fixed"
+      className="relative min-h-screen bg-cover bg-center bg-fixed "
     >
       {/* Overlay for better readability */}
       <div className="absolute inset-0 bg-black/40"></div>
@@ -170,6 +171,7 @@ const Contact = () => {
 
       
       </div>
+    </div>
     </div>
   );
 };

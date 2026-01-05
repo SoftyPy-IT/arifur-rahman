@@ -63,8 +63,8 @@ const Navbar = () => {
     <div className="fixed z-20 w-full">
       <nav className="">
         <div
-          className={`absolute inset-0 backdrop-blur-md bg-white/10 border-b border-white/20 ${
-            scrolling ? "bg-white/20" : ""
+          className={`absolute inset-0 bg-white border-b border-white/20 ${
+            scrolling ? "bg-white" : ""
           } transition-all duration-500`}
         />
 

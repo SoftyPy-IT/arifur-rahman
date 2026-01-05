@@ -75,7 +75,7 @@ const EventDetails = () => {
               </div>
 
               {/* Event Short Description */}
-              <p className="text-sm my-10">{event.shortDescription}</p>
+              {/* <p className="text-sm my-10">{event.shortDescription}</p> */}
 
               {/* Event Full Description */}
               <div dangerouslySetInnerHTML={{ __html: event.description }} />

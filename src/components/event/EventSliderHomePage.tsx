@@ -17,26 +17,33 @@ const EventSliderHomePage = () => {
   const axiosPublic = useAxiosPublic();
   const [events, setEvents] = useState([]);
 
-  // Set limit higher (e.g., 10) to ensure the Swiper loop has enough slides
-  // to copy for seamless transitions, which can also help resolve the issue.
   const limit = 10;
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axiosPublic.get(
-          `events?type=previous&limit=${limit}`
-        );
-        const { totalCount, data } = response?.data?.data;
-        // console.log(totalCount, data);
-        setEvents(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getData();
-  }, [axiosPublic]);
-  // console.log(events);
+ useEffect(() => {
+  const getData = async () => {
+    try {
+      const response = await axiosPublic.get(
+        // `events?type=previous&limit=${limit}`
+        
+        `events?&limit=${limit}&sort=-date`
+      );
+
+      const { data } = response?.data?.data;
+
+      const sortedData = data.sort(
+        (a: TEvent, b: TEvent) =>
+          new Date(b.date).getTime() - new Date(a.date).getTime()
+      );
+
+      setEvents(sortedData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getData();
+}, [axiosPublic]);
+
 
   return (
     <>
