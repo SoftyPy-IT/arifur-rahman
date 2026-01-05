@@ -214,15 +214,15 @@ const Gallery = () => {
                     isHover && imageId === image?._id ? 'opacity-100' : 'opacity-0'
                   }`}
                 ></div>
-                <h1
-                  className={`absolute left-5 text-lg font-semibold text-white transition-all duration-500 ${
+                <div
+                  className={`absolute  px-10 text-lg font-semibold text-white transition-all duration-500 ${
                     isHover && imageId === image?._id ? 'bottom-10 opacity-100' : 'bottom-[-40px] opacity-0'
                   }`}
                 >
                   {image?.title}
-                </h1>
+                </div>
                 <p
-                  className={`absolute left-5 text-sm font-semibold text-white transition-all duration-500 ${
+                  className={`absolute  px-10 text-sm font-semibold text-white transition-all duration-500 ${
                     isHover && imageId === image?._id ? 'bottom-5 opacity-100' : 'bottom-[-40px] opacity-0'
                   }`}
                 >

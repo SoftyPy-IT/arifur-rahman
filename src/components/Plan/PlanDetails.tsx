@@ -68,7 +68,7 @@ const PlanDetailsPage = () => {
             alt={plan.title}
             width={800}
             height={500}
-            className=""
+            className="w-auto h-auto"
             priority
           />
         </div>

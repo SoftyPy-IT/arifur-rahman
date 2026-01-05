@@ -25,7 +25,7 @@ const Media = () => {
     const getData = async () => {
       try {
         const response = await axiosPublic.get(
-          `videos?limit=${limit}&page=${currentPage}`
+          `videos?limit=${limit}&page=${currentPage}&sort=-date`
         );
         const { totalCount, data } = response?.data?.data;
         setMedias(data);

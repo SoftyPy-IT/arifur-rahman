@@ -7,7 +7,6 @@ import { FaCalendar } from "react-icons/fa";
 const ArticleCard = ({ article }: { article: TArticle }) => {
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
-      
       {/* Image Container - Larger Height and Width */}
       <div className="relative w-full h-64">
         <Image
@@ -24,10 +23,22 @@ const ArticleCard = ({ article }: { article: TArticle }) => {
         {/* Date */}
         <div className="flex items-center gap-2 mb-3">
           <FaCalendar className="text-blue-600" />
+          <p className="font-medium">
+            {new Date(article.publishedDate).toLocaleDateString("en-US", {
+              // weekday: "short",
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </p>
+        </div>
+
+        {/* <div className="flex items-center gap-2 mb-3">
+          <FaCalendar className="text-blue-600" />
           <p className="text-sm text-gray-600">
             {new Date(article.publishedDate).toLocaleDateString()}
           </p>
-        </div>
+        </div> */}
 
         {/* Title with Underline and Fixed Height */}
         <div className="mb-4 flex-grow">

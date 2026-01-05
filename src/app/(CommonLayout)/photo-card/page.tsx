@@ -26,7 +26,7 @@ const PhotoCard = () => {
       setLoading(true);
       try {
         const response = await axiosPublic.get(
-          `photoCards?limit=${limit}&page=${currentPage}&sort=-createdAt`
+          `photoCards?limit=${limit}&page=${currentPage}&sort=-date`
         );
         const { totalCount, data } = response?.data?.data;
         setImages(data);

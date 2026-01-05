@@ -60,7 +60,7 @@ const ArticleDetails = () => {
                 </p>
               </div>
 
-              <p className="text-sm mt-2">{article?.shortDescription}</p>
+              {/* <p className="text-sm mt-2">{article?.shortDescription}</p> */}
 
               <div
                 dangerouslySetInnerHTML={{

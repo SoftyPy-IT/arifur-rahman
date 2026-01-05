@@ -23,32 +23,26 @@ const PhotoCardsSlider = () => {
         setLoading(true);
         const response = await axiosPublic.get("/photoCards");
 
-        if (response.data.success) {
-          let photoCardsData: TPhotoCards[] = [];
+        let data: TPhotoCards[] = [];
 
-          // Handle different response structures
-          if (Array.isArray(response.data.data)) {
-            photoCardsData = response.data.data;
-          } else if (
-            response.data.data?.data &&
-            Array.isArray(response.data.data.data)
-          ) {
-            photoCardsData = response.data.data.data;
-          }
-
-          // Sort by date (newest first) and limit to 5 for slider
-          const sortedPhotoCards = photoCardsData
-            .sort((a, b) => {
-              const dateA = a.date ? new Date(a.date).getTime() : 0;
-              const dateB = b.date ? new Date(b.date).getTime() : 0;
-              return dateB - dateA;
-            })
-            .slice(0, 5); // Limit to 5 for slider
-
-          setPhotoCards(sortedPhotoCards);
+        if (Array.isArray(response.data?.data)) {
+          data = response.data.data;
+        } else if (Array.isArray(response.data?.data?.data)) {
+          data = response.data.data.data;
         }
-      } catch (error: any) {
-        setError(error.message || "Failed to load photo cards");
+
+        // Sort by date (newest first) & limit to 5
+        const sorted = data
+          .sort((a, b) => {
+            const d1 = a.date ? new Date(a.date).getTime() : 0;
+            const d2 = b.date ? new Date(b.date).getTime() : 0;
+            return d2 - d1;
+          })
+          .slice(0, 5);
+
+        setPhotoCards(sorted);
+      } catch (err: any) {
+        setError(err?.message || "Failed to load photo cards");
       } finally {
         setLoading(false);
       }
@@ -57,97 +51,80 @@ const PhotoCardsSlider = () => {
     getData();
   }, [axiosPublic]);
 
-  const mapPhotoCardToCardData = (photoCard: TPhotoCards) => {
-    return {
-      id: photoCard._id || "",
-      title: photoCard.title || "Photo Card",
-      image: photoCard.imageUrl || "/images/default-photo.jpg",
-    };
-  };
-
-  const photoCardsList = photoCards.map(mapPhotoCardToCardData);
-
   return (
-    <div className="relative mb-8 w-full">
-      <div className="flex justify-center items-center w-full">
+    <div className="relative w-full mb-12">
+      <div className="flex justify-center w-full">
+        {/* STATE HANDLING */}
         {loading ? (
-          <div className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] aspect-square flex items-center justify-center">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-              <p className="mt-4 text-gray-600">Loading photo cards...</p>
-            </div>
+          <div className="aspect-square w-full max-w-[260px] flex items-center justify-center">
+            <div className="animate-spin h-12 w-12 rounded-full border-b-2 border-blue-600" />
           </div>
         ) : error ? (
-          <div className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] aspect-square flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-red-500">Error loading photo cards</p>
-              <p className="text-sm text-gray-500 mt-2">{error}</p>
-            </div>
+          <div className="aspect-square w-full max-w-[260px] flex items-center justify-center text-center">
+            <p className="text-red-500">{error}</p>
           </div>
-        ) : photoCardsList.length === 0 ? (
-          <div className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[450px] aspect-square flex items-center justify-center">
-            <div className="text-center">
-              <p className="text-gray-500">No photo cards available</p>
-              <p className="text-sm text-gray-400 mt-2">
-                Add some photo cards first
-              </p>
-            </div>
+        ) : photoCards.length === 0 ? (
+          <div className="aspect-square w-full max-w-[260px] flex items-center justify-center text-center">
+            <p className="text-gray-500">No photo cards available</p>
           </div>
         ) : (
-          <div className="w-[200px] md:w-[380px] ">
-            <Swiper
-              effect="cards"
-              grabCursor={true}
-              autoplay={{
-                delay: 3500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              modules={[EffectCards, Autoplay]}
-              className="w-full"
-              
-            >
-              {photoCardsList.map((photoCard) => (
-                <SwiperSlide key={photoCard.id} className="h-auto">
-                  <div className="group p-0 relative overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 border-0 rounded-md w-full">
-                    <div className="relative group overflow-hidden aspect-square w-full">
+          /* RESPONSIVE CARD CONTAINER */
+          <div className="w-full flex justify-center">
+            <div className="w-full max-w-[210px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px]">
+              <Swiper
+                effect="cards"
+                slidesPerView={1}
+                centeredSlides
+                grabCursor
+                autoplay={{
+                  delay: 3500,
+                  // disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                cardsEffect={{
+                  rotate: false,
+                  slideShadows: true,
+                }}
+                modules={[EffectCards, Autoplay]}
+                className="w-full"
+              >
+                {photoCards.map((card) => (
+                  <SwiperSlide key={card._id}>
+                    <div className="relative aspect-square  rounded-md overflow-hidden shadow-2xl group">
+                      {/* IMAGE */}
                       <Image
-                        src={photoCard.image}
-                        alt={photoCard.title}
-                        height={500}
-                        width={400}
-                        className="transition-transform duration-500 group-hover:scale-110"
-                        // sizes="(max-width: 640px) 250px, 
-                        //        (max-width: 768px) 300px, 
-                        //        (max-width: 1024px) 350px, 
-                        //        (max-width: 1280px) 400px, 
-                        //        450px"
-                        priority={false}
+                        src={card.imageUrl}
+                        alt={card.title}
+                        fill
+                        sizes="(max-width: 640px) 260px,
+                               (max-width: 768px) 320px,
+                               (max-width: 1024px) 350px,
+                               400px"
+                        className=" transition-transform duration-500 group-hover:scale-110"
                       />
 
-                      {/* Gradient overlay */}
+                      {/* GRADIENT */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-                      {/* Content overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 text-white">
-                        <div className="space-y-1 sm:space-y-2">
-                          <h3 className="text-base sm:text-lg md:text-xl font-bold leading-tight line-clamp-2">
-                            {photoCard.title}
-                          </h3>
-                        </div>
+                      {/* TITLE */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                        <h3 className="text-base sm:text-lg font-bold leading-tight line-clamp-2">
+                          {card.title}
+                        </h3>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
         )}
       </div>
 
-      <div className="flex flex-col items-center my-5 mt-8 sm:mt-10">
-        <Link href="/photo-card" className="w-full max-w-[200px] sm:max-w-[220px]">
-          <button className="hover-border-button rounded w-full py-2 sm:py-3 text-sm sm:text-base">
+      {/* SEE MORE BUTTON */}
+      <div className="flex justify-center mt-10">
+        <Link href="/photo-card" className="w-full max-w-[220px]">
+          <button className="w-full py-3 rounded bg-blue-600 text-white hover:bg-blue-700 transition">
             See More
           </button>
         </Link>

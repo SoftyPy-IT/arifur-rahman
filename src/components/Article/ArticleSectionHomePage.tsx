@@ -7,9 +7,9 @@ import useFeatures from "@/hooks/useFeatures";
 import { TArticle } from "@/types/types";
 
 const ArticleSectionHomePage = () => {
-  const { homepageArticleBG } = useFeatures(); 
+  const { homepageArticleBG } = useFeatures();
   const axiosPublic = useAxiosPublic();
-  const [articles, setArticles] = useState([]);  
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -32,8 +32,6 @@ const ArticleSectionHomePage = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
 
-     
-
       <div className="container mx-auto relative z-10">
         {/* Title with Underline */}
         <div className="text-center mb-16">
@@ -54,25 +52,33 @@ const ArticleSectionHomePage = () => {
         {/* See More Button - Center aligned */}
         <div className="flex justify-center mt-12">
           <Link href="/articles" className="group">
-            <button className="relative px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 
-                             text-white font-semibold rounded-full overflow-hidden 
-                             hover:shadow-xl hover:shadow-blue-900/30 transition-all duration-300">
+            <button className="relative px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-full overflow-hidden hover:shadow-xl hover:shadow-blue-900/30 transition-all duration-300">
               {/* Button Background Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 
-                            opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
               {/* Button Content */}
               <span className="relative flex items-center justify-center">
                 See More Articles
-                <svg className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg
+                  className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </span>
-              
+
               {/* Button Border Animation */}
-              <div className="absolute inset-0 rounded-full border-2 border-transparent 
-                            group-hover:border-white/20 transition-all duration-300"></div>
+              <div
+                className="absolute inset-0 rounded-full border-2 border-transparent 
+                            group-hover:border-white/20 transition-all duration-300"
+              ></div>
             </button>
           </Link>
         </div>
