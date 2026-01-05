@@ -134,7 +134,7 @@ const PlanSliderHomePage = () => {
             ref={sliderRef}
             className="overflow-hidden px-3 md:px-12 lg:px-16"
           >
-            {/* Cards Grid - No opacity transition here */}
+         
             <div
               className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 ${
                 isAnimating ? "opacity-100" : "opacity-100"

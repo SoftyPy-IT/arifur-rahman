@@ -8,36 +8,69 @@ const siliguri = Hind_Siliguri({
   subsets: ["bengali"],
 });
 
-
-
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://saifalikhan.info"),
-  applicationName: "Arifur Rahman",
-  title: "Arifur Rahman",
+  applicationName: "Majumdar Arifur Rahman",
+  title: "Majumdar Arifur Rahman",
   description: "Politician of Bangladesh Nationalist Party",
   openGraph: {
     type: "website",
     locale: "en_IE",
-    // url: "https://saifalikhan.info",
-    siteName: "Arifur Rahman",
-    title: "Politician of Bangladesh Nationalist Party",
-    description: "একজন সুপরিচিত রাজনৈতিক নেতা",
+    url: "https://www.majumdararif.info",
+    siteName: "Majumdar Arifur Rahman",
+    title: "Majumdar Arifur Rahman",
+    description: "Politician of Bangladesh Nationalist Party",
     images: [
       {
-        url: "/logo.png",
+        url: "https://www.majumdararif.info/Images/ar2.png",
         width: 1200,
         height: 630,
-        alt: "Arifur Rahman",
+        alt: "Majumdar Arifur Rahman",
       },
     ],
+    countryName: "Bangladesh",
+    emails: ["majumdararif@gmail.com"],
+
+    phoneNumbers: ["+8801xxxxxxxxx"],
   },
+  // Add twitter metadata too
   twitter: {
     card: "summary_large_image",
-    title: "Arifur Rahman",
+    title: "Majumdar Arifur Rahman",
     description: "Politician of Bangladesh Nationalist Party",
-    images: ["/logo.png"],
+    images: ["https://www.majumdararif.info/Images/ar2.png"],
   },
+  // Add optional metadata for better compatibility
+  metadataBase: new URL("https://www.majumdararif.info"), // This helps Next.js generate absolute URLs
 };
+
+// export const metadata: Metadata = {
+//   // metadataBase: new URL("https://saifalikhan.info"),
+//   applicationName: "Arifur Rahman",
+//   title: "Arifur Rahman",
+//   description: "Politician of Bangladesh Nationalist Party",
+//   openGraph: {
+//     type: "website",
+//     locale: "en_IE",
+//     // url: "https://saifalikhan.info",
+//     siteName: "Arifur Rahman",
+//     title: "Politician of Bangladesh Nationalist Party",
+//     description: "একজন সুপরিচিত রাজনৈতিক নেতা",
+//     images: [
+//       {
+//         url: "/logo.png",
+//         width: 1200,
+//         height: 630,
+//         alt: "Arifur Rahman",
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     title: "Arifur Rahman",
+//     description: "Politician of Bangladesh Nationalist Party",
+//     images: ["/logo.png"],
+//   },
+// };
 
 export default function RootLayout({
   children,

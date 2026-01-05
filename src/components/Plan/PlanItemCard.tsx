@@ -6,7 +6,7 @@ import React from "react";
 const PlanItemCard = ({ plan }: { plan: TPlan }) => {
   return (
     <Link href={`/plans/${plan?._id}`} className="block">
-      <div className="group relative h-[300px] md:h-[500px] w-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+      <div className="group relative h-[300px] md:h-[350px] lg:h-[300px] xl:h-[450px] w-full rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
         {/* Fixed height container */}
         <div className="relative w-full h-full">
           <Image

@@ -94,7 +94,7 @@ const PhotoCardsSlider = () => {
             </div>
           </div>
         ) : (
-          <div className="w-full max-w-[90vw] md:max-w-[80vw] lg:max-w-[70vw] xl:max-w-[60vw]">
+          <div className="w-[200px] md:w-[380px] ">
             <Swiper
               effect="cards"
               grabCursor={true}
@@ -105,10 +105,7 @@ const PhotoCardsSlider = () => {
               }}
               modules={[EffectCards, Autoplay]}
               className="w-full"
-              style={{
-                maxWidth: "min(400px, 90vw)", // Responsive max width
-                margin: "0 auto",
-              }}
+              
             >
               {photoCardsList.map((photoCard) => (
                 <SwiperSlide key={photoCard.id} className="h-auto">
