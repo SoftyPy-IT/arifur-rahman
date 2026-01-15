@@ -6,7 +6,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import useAxiosPublic from "@/hooks/useAxiosPublic";
-import { TBanner, TBiography, TItem } from "@/types/types";
+import { TBiography, TItem } from "@/types/types";
+import { TBanner } from "@/types/types";
 import useFeatures from "@/hooks/useFeatures";
 
 const Biography = () => {
@@ -53,7 +54,7 @@ const Biography = () => {
     >
       <div className="w-[90%] mb-10 bg-white lg:px-10 p-5 relative -top-32 shadow-xl pb-14">
         <h3 className=" md:text-3xl lg:text-4xl text-blue-950 font-semibold text-center mb-2">
-          Biography of{" "}
+          Biography of{" "} 
           <span className="text-orange-500 text-bold">
             {!isLoading && banner?.name}
           </span>

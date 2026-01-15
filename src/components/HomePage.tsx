@@ -3,7 +3,6 @@
 
 import React, { useEffect, useState } from "react";
 import ArticleSectionHomePage from "@/components/Article/ArticleSectionHomePage";
-import Banner from "@/components/Banner/Banner";
 import ElectionCampaign from "@/components/electionCampaign/ElectionCampaign";
 import EventSliderHomePage from "@/components/event/EventSliderHomePage";
 import IntroductionVideo from "@/components/introductionVideo/IntroductionVideo";
@@ -12,10 +11,11 @@ import VoiceOnMedia from "@/components/VoiceOnMedia";
 import { TFeatures } from "@/types/types";
 import PlanSliderHomePage from "./Plan/PlanSliderHomePage";
 import Manifesto from "./Manifesto/page.tsx";
+import Banner from "./Banner/Banner";
 
 const HomePage = () => {
   const [features, setFeatures] = useState<TFeatures | null>(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -35,20 +35,20 @@ const HomePage = () => {
         console.error("Failed to fetch features:", err);
         setError("Failed to load data. Please try again later.");
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     };
 
     fetchData();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen">
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
+  // }
 
   if (error) {
     return (

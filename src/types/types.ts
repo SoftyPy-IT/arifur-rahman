@@ -88,13 +88,13 @@ export type TVoiceOnMedia = {
   createdAt: string;
 };
 
-export type TBanner = {
-  name: string;
-  designation: string;
-  partyname: string;
-  imageUrl: string;
-  updatedAt: string;
-};
+// export type TBanner = {
+//   name: string;
+//   designation: string;
+//   partyname: string;
+//   imageUrl: string;
+//   updatedAt: string;
+// };
 
 export type TConcernIssues = {
   issue1: string;
@@ -218,3 +218,14 @@ export type TPhotoCards = {
   createdAt?: string;
   updatedAt?: string;
 };
+
+
+export interface TBanner {
+  _id: string;
+  name: string;
+  thumbnailImage: string;
+  title: string;
+  toptitle: string;
+  bottomtitle: string;
+  isActive: boolean;
+}
