@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import ArticleSectionHomePage from "@/components/Article/ArticleSectionHomePage";
 import ElectionCampaign from "@/components/electionCampaign/ElectionCampaign";
 import EventSliderHomePage from "@/components/event/EventSliderHomePage";
@@ -63,7 +63,9 @@ const HomePage = () => {
   return (
     <div>
       {/* Banner */}
-      <Banner />
+     
+        <Banner />
+   
 
       {/* Our Concern & Introduction Video */}
       <section

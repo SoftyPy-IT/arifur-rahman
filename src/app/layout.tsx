@@ -39,38 +39,11 @@ export const metadata: Metadata = {
     description: "Politician of Bangladesh Nationalist Party",
     images: ["https://www.majumdararif.info/Images/ar2.png"],
   },
-  // Add optional metadata for better compatibility
-  metadataBase: new URL("https://www.majumdararif.info"), // This helps Next.js generate absolute URLs
+ 
+  metadataBase: new URL("https://www.majumdararif.info"), 
 };
 
-// export const metadata: Metadata = {
-//   // metadataBase: new URL("https://saifalikhan.info"),
-//   applicationName: "Arifur Rahman",
-//   title: "Arifur Rahman",
-//   description: "Politician of Bangladesh Nationalist Party",
-//   openGraph: {
-//     type: "website",
-//     locale: "en_IE",
-//     // url: "https://saifalikhan.info",
-//     siteName: "Arifur Rahman",
-//     title: "Politician of Bangladesh Nationalist Party",
-//     description: "একজন সুপরিচিত রাজনৈতিক নেতা",
-//     images: [
-//       {
-//         url: "/logo.png",
-//         width: 1200,
-//         height: 630,
-//         alt: "Arifur Rahman",
-//       },
-//     ],
-//   },
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "Arifur Rahman",
-//     description: "Politician of Bangladesh Nationalist Party",
-//     images: ["/logo.png"],
-//   },
-// };
+
 
 export default function RootLayout({
   children,
