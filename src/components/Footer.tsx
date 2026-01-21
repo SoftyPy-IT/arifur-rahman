@@ -27,19 +27,19 @@ const Footer = () => {
         { label: "About", href: "/about" },
         { label: "Events", href: "/events" },
         { label: "Gallery", href: "/gallery" },
-      ]
+      ],
     },
     {
       title: "Resources",
       links: [
         // { label: "Media", href: "/media" },
-        
+
         { label: "Articles", href: "/articles" },
         { label: "Videos", href: "/media" },
         // { label: "Publications", href: "/publications" },
         // { label: "News", href: "/news" },
         { label: "Contact", href: "/contact" },
-      ]
+      ],
     },
     {
       title: "Company",
@@ -47,40 +47,49 @@ const Footer = () => {
         // { label: "Privacy Policy", href: "https://www.shouravgroup-bd.com/privacy-policy/" },
         // { label: "Terms of Service", href: "/terms" },
         // { label: "Cookie Policy", href: "/cookies" },
-        { label: company?.companyName || "Company", href: company?.websiteUrl || "#" },
-      ]
-    }
+        {
+          label: company?.companyName || "Company",
+          href: company?.websiteUrl || "#",
+        },
+        { label: "Magpie Composite Textile Ltd", href: company?.websiteUrl || "#" },
+        { label: "Magpie Knit Wear Ltd", href: company?.websiteUrl || "#" },
+        { label: "Creative Woolwear Ltd", href: company?.websiteUrl || "#" },
+        { label: "Abss Hight-tech Sweater Ltd", href: company?.websiteUrl || "#" },
+      ],
+    },
   ];
+
+
 
   // Social media links
   const socialLinks = [
-    { 
-      icon: FaFacebook, 
-      href: contact?.facebookUrl || "#", 
+    {
+      icon: FaFacebook,
+      href: contact?.facebookUrl || "#",
       label: "Facebook",
-      color: "hover:bg-[#1877F2]"
+      color: "hover:bg-[#1877F2]",
     },
-    { 
-      icon: FaLinkedin, 
-      href: contact?.LinkedInUrl || "#", 
+    {
+      icon: FaLinkedin,
+      href: contact?.LinkedInUrl || "#",
       label: "LinkedIn",
-      color: "hover:bg-[#0077B5]"
+      color: "hover:bg-[#0077B5]",
     },
-    { 
-      icon: FaYoutube, 
-      href: contact?.youTubeUrl || "#", 
+    {
+      icon: FaYoutube,
+      href: contact?.youTubeUrl || "#",
       label: "YouTube",
-      color: "hover:bg-[#FF0000]"
+      color: "hover:bg-[#FF0000]",
     },
-    // { 
-    //   icon: FaXTwitter, 
-    //   href: contact?.twitterUrl || "#", 
+    // {
+    //   icon: FaXTwitter,
+    //   href: contact?.twitterUrl || "#",
     //   label: "Twitter",
     //   color: "hover:bg-black"
     // },
-    // { 
-    //   icon: FaInstagram, 
-    //   href: contact?.instagramUrl || "#", 
+    // {
+    //   icon: FaInstagram,
+    //   href: contact?.instagramUrl || "#",
     //   label: "Instagram",
     //   color: "hover:bg-gradient-to-r from-purple-500 to-pink-500"
     // },
@@ -106,7 +115,6 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-          
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -114,12 +122,14 @@ const Footer = () => {
                 <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                   {banner?.name}
                 </h2>
-                <div 
+                <div
                   className="text-gray-300 mt-2 max-w-md"
-                  dangerouslySetInnerHTML={{ __html: banner?.designation || "" }}
+                  dangerouslySetInnerHTML={{
+                    __html: banner?.designation || "",
+                  }}
                 />
               </div>
-              
+
               {/* Contact Info */}
               <div className="space-y-3 mt-6">
                 {contact?.phone && (
@@ -127,7 +137,7 @@ const Footer = () => {
                     <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
                       <FiPhone className="w-4 h-4 text-blue-400" />
                     </div>
-                    <Link 
+                    <Link
                       href={`tel:${contact.phone}`}
                       className="text-gray-300 hover:text-white transition-colors"
                     >
@@ -135,13 +145,13 @@ const Footer = () => {
                     </Link>
                   </div>
                 )}
-                
+
                 {contact?.email && (
                   <div className="flex items-center gap-3 group">
                     <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
                       <FiMail className="w-4 h-4 text-blue-400" />
                     </div>
-                    <Link 
+                    <Link
                       href={`mailto:${contact.email}`}
                       className="text-gray-300 hover:text-white transition-colors"
                     >
@@ -149,13 +159,13 @@ const Footer = () => {
                     </Link>
                   </div>
                 )}
-                
+
                 {contact?.address && (
                   <div className="flex items-center gap-3 group">
                     <div className="p-2 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors ">
                       <FiMapPin className="w-4 h-4 text-blue-400" />
                     </div>
-                    <Link 
+                    <Link
                       href={contact.address}
                       className="text-gray-300 hover:text-white transition-colors"
                     >
@@ -178,7 +188,7 @@ const Footer = () => {
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      target={link.href.startsWith('http') ? '_blank' : '_self'}
+                      target={link.href.startsWith("http") ? "_blank" : "_self"}
                       className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
                     >
                       <span className="w-1 h-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -194,7 +204,6 @@ const Footer = () => {
         {/* Social Media & Newsletter */}
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            
             {/* Social Media */}
             <div className="flex flex-col items-center lg:items-start">
               <h4 className="font-semibold mb-4">Connect With Us</h4>
@@ -216,7 +225,9 @@ const Footer = () => {
             {/* Newsletter Subscription */}
             <div className="w-full lg:w-auto">
               <div className="max-w-md mx-auto lg:mx-0">
-                <h4 className="font-semibold mb-4 text-center lg:text-right">Stay Updated</h4>
+                <h4 className="font-semibold mb-4 text-center lg:text-right">
+                  Stay Updated
+                </h4>
                 <form className="flex gap-2">
                   <input
                     type="email"
@@ -242,16 +253,16 @@ const Footer = () => {
               © {currentYear} Arifur Rahman. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-400">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              <Link
+                href="/privacy-policy"
+                className="hover:text-white transition-colors"
+              >
                 Privacy Policy
               </Link>
-              
             </div>
           </div>
         </div>
       </div>
-
-      
     </footer>
   );
 };
